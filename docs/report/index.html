@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Bornholm landscape structure analysis: five interpreted landscape types, eight analytical structures and a multiscale H3 map."><meta name="theme-color" content="#315b48"><title>Bornholm Landscape Structure Analysis | GISLab</title><link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"></head><body><a class="skip" href="#main">Skip to content</a><div class="shell"><header class="masthead"><a class="brand" href="../">GISLab <span aria-hidden="true">/</span> Multiscale Landscape Structures</a><nav aria-label="Publication"><a href="../">Overview</a><a href="../report/">Report</a><a href="../map/">Map</a><a href="../factor-loadings/">Factor loadings</a></nav></header><main id="main"><div class="page-title"><span class="eyebrow">Integrated report · v10</span><h1>Bornholm Landscape Structure Analysis</h1><p class="lead">Method, factors, structures and interpreted landscape types.</p><div class="actions"><a class="button primary" href="../map/">Interactive map</a><a class="button" href="bornholm-landscape-structure-report.pdf" download>Download PDF</a><a class="button" href="bornholm-landscape-structure-report.md" download>Download Markdown</a><a class="button" href="../factor-loadings/">Factor loadings</a></div></div><div class="report-layout"><nav class="toc" aria-label="Report contents"><a href="#purpose-and-scope">Purpose and scope</a><a href="#method-and-development">Method and development</a><a href="#factors">Factors</a><a href="#the-eight-v9-structures">The eight v9 structures</a><a href="#from-clusters-to-landscape-types">From clusters to landscape types</a><a href="#distribution-of-landscape-types">Distribution of landscape types</a><a href="#reading-the-multiscale-map">Reading the multiscale map</a><a href="#factor-loadings-and-model-record">Factor loadings and model record</a><a href="#interpretation-and-further-use">Interpretation and further use</a><a href="#references-and-attribution">References and attribution</a><a href="#supporting-files">Supporting files</a></nav><article class="report"><p>Integrated report · v10 interpretation · Updated 9 October 2026</p>
+<h2 id="purpose-and-scope">Purpose and scope</h2>
+<p>This report connects landscape metrics, factor scores, statistical clusters and interpreted landscape types for Bornholm, Denmark. It presents the existing v10 analysis together with a multiscale map and the supporting model tables.</p>
+<p>The analysis describes the spatial structure of the landscape: coastal and sandy environments, fracture-valley relief, forest and protected nature, settlement, and open agricultural land. It provides a basis for comparing landscape contexts and discussing regional patterns.</p>
+<p>v10 is an interpreted synthesis of the v9 eight-cluster solution. It translates analytical clusters and factor scores into five landscape types. The classification is a cartographic and methodological interpretation; it has not been field-verified. This publication updates the English explanation and presentation of the existing results. It does not introduce a new analytical run.</p>
+<h2 id="method-and-development">Method and development</h2>
+<p>The work developed through several analytical versions. Early versions showed that finer H3 resolution and an eight-cluster solution made the fracture-valley structure clearer. Later versions tested theme balancing, helped interpret factor signals and cluster sizes, and improved the presentation of factor layers. The v9 cluster solution provides the analytical foundation of v10.</p>
+<p>The method has four connected stages:</p>
+<ol>
+<li>Summarize GIS layers and landscape metrics on a hexagonal grid. The metrics describe relief, elevation differences, coast and sand, forest and protected nature, settlement, and open lowland and agricultural environments.</li>
+<li>Represent the surrounding context with multiscale landscape measures. The exported analytical variable identifiers distinguish contextual means and standard deviations and retain their neighbourhood-scale suffixes.</li>
+<li>Reduce the landscape measures to five factors. Factor loadings describe the relationship between each input variable and a factor. Factor scores describe how strongly each hexagon expresses that factor. The v9 analysis groups cells with similar factor profiles into eight clusters.</li>
+<li>Interpret the clusters as five landscape types through an explicit crosswalk. The crosswalk makes direct transfers, the split of the mixed cluster and the treatment of settlement cores visible.</li>
+</ol>
+<p>Two meanings of scale must be distinguished. <strong>Neighbourhood scale</strong> belongs to the contextual measures used in the analysis. <strong>H3 display resolution</strong> belongs to the map&#39;s visual aggregation. Selecting R8 rather than R10 changes the displayed summary; it does not recompute neighbourhood measures or fit a new factor or cluster model.</p>
+<h2 id="factors">Factors</h2>
+<ul>
+<li><strong>F1 — Fracture valleys and steep relief.</strong> Strong loadings on slope, relief and terrain variation support the interpretation of fracture-valley structure.</li>
+<li><strong>F2 — Aeolian sand and sandy coast.</strong> Sand, dunes and coastal environments characterize this factor.</li>
+<li><strong>F3 — Forest and protected nature.</strong> Forest and protected habitats characterize this factor.</li>
+<li><strong>F4 — Settlement and built structure.</strong> Settlement, buildings and resident population characterize this factor.</li>
+<li><strong>F5 — Low-lying open land.</strong> Low elevation and open landscape characterize this factor.</li>
+</ul>
+<p>The complete factor-loading table is provided alongside the map. Original variable identifiers are retained to make the exported numeric results traceable. A positive or negative factor score expresses a relative model pattern, not an independent measure of landscape quality.</p>
+<h2 id="the-eight-v9-structures">The eight v9 structures</h2>
+<ul>
+<li><strong>Cluster 1: Settlement and activity cores.</strong> Strongly associated with F4.</li>
+<li><strong>Cluster 2: Fracture-valley influenced transition landscape.</strong> Associated with F1.</li>
+<li><strong>Cluster 3: Mixed everyday landscape with a low factor profile.</strong> No single strongly dominant factor.</li>
+<li><strong>Cluster 4: Aeolian sand and sandy coast — core zone.</strong> Very strong F2.</li>
+<li><strong>Cluster 5: Fracture valley and steep relief — core zone with sand/coast.</strong> Strong F1 and a secondary F2 signal.</li>
+<li><strong>Cluster 6: Open and low-lying mixed landscape.</strong> Associated with F5.</li>
+<li><strong>Cluster 7: Forest and protected nature — core zone.</strong> Strong F3.</li>
+<li><strong>Cluster 8: Sandy and coastal landscape.</strong> Associated with F2, with a more mixed character than cluster 4.</li>
+</ul>
+<p>The map&#39;s Structures view retains these analytical cluster identities. The Landscape types view presents the interpreted v10 synthesis of the same source cells.</p>
+<h2 id="from-clusters-to-landscape-types">From clusters to landscape types</h2>
+<p>v10 transfers the clear v9 clusters directly to interpreted landscape types. The large mixed cluster 3 is split using F1, which identifies relief and fracture-valley influence within the agricultural landscape. The documented threshold is <strong>F1 ≥ −0.45</strong> for LT03 and <strong>F1 &lt; −0.45</strong> for LT05 within cluster 3.</p>
+<p>Settlement and activity cores are not a separate v10 landscape type. Cluster 1 cells are assigned to the nearest interpreted surrounding landscape type. The published crosswalk describes this as a medium-confidence interpretation. It is a classification rule, not a statement that settlement is absent from those areas.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">ID</th><th scope="col">Name</th><th scope="col">Interpretation</th></tr></thead><tbody><tr><td>LT01</td><td>Rocky coastal landscape</td><td>Coastal and relief-influenced areas where steep/fracture-valley relief and coastal signals coincide.</td></tr>
+<tr><td>LT02</td><td>Sandy coastal landscape</td><td>Sandy and coastal areas, mainly where the aeolian sand and sandy coast factor is strong.</td></tr>
+<tr><td>LT03</td><td>Agricultural fracture-valley landscape</td><td>Open agricultural landscape with a clear fracture-valley or low-hill structure.</td></tr>
+<tr><td>LT04</td><td>Forested fracture-valley landscape</td><td>Forested fracture-valley and nature areas with a strong forest/protected-nature factor.</td></tr>
+<tr><td>LT05</td><td>Plain and agricultural landscape</td><td>Larger open, low-lying and agriculture-dominated landscape rooms.</td></tr></tbody></table></div>
+<p>The complete crosswalk records the interpretation and its qualitative confidence. These confidence labels are not calibrated probabilities.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">v9 cluster</th><th scope="col">Structure</th><th scope="col">v10 type</th><th scope="col">Landscape type</th><th scope="col">Interpretation rule</th><th scope="col">Confidence</th></tr></thead><tbody><tr><td>1</td><td>Settlement and activity cores</td><td>absorbed</td><td>Nearest interpreted landscape type</td><td>Settlement/activity areas are not treated as a separate v10 landscape type, but are assigned to the nearest interpreted surrounding type.</td><td>medium</td></tr>
+<tr><td>2</td><td>Fracture-valley influenced transition landscape</td><td>LT03</td><td>Agricultural fracture-valley landscape</td><td>Fracture-valley signal without a strong forest factor is interpreted as agricultural fracture-valley structure.</td><td>high</td></tr>
+<tr><td>3a</td><td>Mixed everyday landscape - F1 &gt;= -0.45</td><td>LT03</td><td>Agricultural fracture-valley landscape</td><td>Part of the low-profile mixed cluster where F1 shows fracture-valley/relief influence.</td><td>medium</td></tr>
+<tr><td>3b</td><td>Mixed everyday landscape - F1 &lt; -0.45</td><td>LT05</td><td>Plain and agricultural landscape</td><td>Part of the low-profile mixed cluster with lower F1, interpreted as flatter agricultural plain.</td><td>medium</td></tr>
+<tr><td>4</td><td>Aeolian sand and sandy coast - core zone</td><td>LT02</td><td>Sandy coastal landscape</td><td>Strong F2 sandy/coastal signal.</td><td>high</td></tr>
+<tr><td>5</td><td>Fracture valley and steep relief - core zone with sand/coast</td><td>LT01</td><td>Rocky coastal landscape</td><td>Strong F1 relief/fracture-valley signal and secondary sand/coast signal.</td><td>high</td></tr>
+<tr><td>6</td><td>Open and low-lying mixed landscape</td><td>LT05</td><td>Plain and agricultural landscape</td><td>Strong F5 low-lying open land.</td><td>high</td></tr>
+<tr><td>7</td><td>Forest and protected nature - core zone</td><td>LT04</td><td>Forested fracture-valley landscape</td><td>Strong F3 forest/nature signal.</td><td>high</td></tr>
+<tr><td>8</td><td>Sandy and coastal landscape</td><td>LT02</td><td>Sandy coastal landscape</td><td>F2 sandy/coastal signal with a more open low-lying character.</td><td>high</td></tr></tbody></table></div>
+<h2 id="distribution-of-landscape-types">Distribution of landscape types</h2>
+<p>The source map contains <strong>47,117 H3 R10 cells</strong>. Plain and agricultural landscape is the largest class, followed by agricultural fracture-valley landscape. Together they account for approximately 77.5% of the source cells.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">ID</th><th scope="col">Name</th><th scope="col">R10 cells</th><th scope="col">Share (%)</th></tr></thead><tbody><tr><td>LT01</td><td>Rocky coastal landscape</td><td>2257</td><td>4.8</td></tr>
+<tr><td>LT02</td><td>Sandy coastal landscape</td><td>2984</td><td>6.3</td></tr>
+<tr><td>LT03</td><td>Agricultural fracture-valley landscape</td><td>17073</td><td>36.2</td></tr>
+<tr><td>LT04</td><td>Forested fracture-valley landscape</td><td>5336</td><td>11.3</td></tr>
+<tr><td>LT05</td><td>Plain and agricultural landscape</td><td>19467</td><td>41.3</td></tr></tbody></table></div>
+<p>These percentages are <strong>shares of source-cell counts</strong>, not a newly computed area-weighted survey of Bornholm. They use the source report&#39;s values rounded to one decimal place; the displayed shares sum to 99.9% because of rounding. They should not be read as parcel boundaries or exact administrative area statistics.</p>
+<h2 id="reading-the-multiscale-map">Reading the multiscale map</h2>
+<p>The map provides five display resolutions from detail to the whole island:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Resolution</th><th scope="col">Source cells / displayed hexagons</th><th scope="col">Reading level</th></tr></thead><tbody><tr><td>R10</td><td>47,117</td><td>Source detail</td></tr>
+<tr><td>R9</td><td>6,854</td><td>Local</td></tr>
+<tr><td>R8</td><td>1,029</td><td>Regional</td></tr>
+<tr><td>R7</td><td>166</td><td>Overview</td></tr>
+<tr><td>R6</td><td>32</td><td>Whole island</td></tr></tbody></table></div>
+<p>R10 preserves the source classification and factor scores. R9–R6 are existing summaries of those source cells: categorical attributes use modal values and factor scores use arithmetic means. These exports are retained without a new aggregation run. Rollups emphasize broad patterns and can hide small or mixed landscape features. The confidence and rule text carried by a coarser cell is descriptive source metadata, not a new statistical confidence assessment of its aggregated geometry.</p>
+<p><strong>Auto</strong> changes the displayed resolution with zoom: R10 from zoom 12, R9 from zoom 11, R8 from zoom 9, R7 from zoom 7, and R6 below zoom 7. A manual resolution selection remains active until Auto is selected again.</p>
+<ul>
+<li><strong>Landscape types</strong> displays the five v10 interpretations with a consistent palette at every resolution.</li>
+<li><strong>Structures</strong> displays the eight original v9 cluster categories, summarized at coarser resolutions.</li>
+<li><strong>Factors</strong> displays continuous F1–F5 scores. The colour ramp is clipped at −4.5 and +4.5 for display; the underlying exported values are unchanged.</li>
+<li><strong>Opacity</strong> adjusts the transparency of the thematic layer. Select a cell to inspect its identifier, type, structure, interpretation confidence and factor scores.</li>
+</ul>
+<p>The web map and GeoJSON use longitude and latitude in EPSG:4326. The analysis has Bornholm&#39;s native metric CRS, EPSG:25833. This publication performs no new distance, area or buffer calculations.</p>
+<h2 id="factor-loadings-and-model-record">Factor loadings and model record</h2>
+<p>The following table reproduces the source report&#39;s ten strongest listed loadings for each factor. The full loading matrix is available from the Factor loadings page and as a CSV download. The source&#39;s full numeric matrix is preserved verbatim.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Factor</th><th scope="col">Analytical variable identifier</th><th scope="col">Loading</th></tr></thead><tbody><tr><td>F1</td><td>mean_gc_contour_mean_slope_deg_k250</td><td>0.9324</td></tr>
+<tr><td>F1</td><td>mean_gc_relief_m_k250</td><td>0.9295</td></tr>
+<tr><td>F1</td><td>mean_gc_contour_mean_slope_deg_k100</td><td>0.9289</td></tr>
+<tr><td>F1</td><td>mean_gc_relief_m_k100</td><td>0.9241</td></tr>
+<tr><td>F1</td><td>mean_gc_contour_mean_slope_deg_k50</td><td>0.9151</td></tr>
+<tr><td>F1</td><td>mean_gc_relief_m_k50</td><td>0.9011</td></tr>
+<tr><td>F1</td><td>mean_gc_contour_mean_slope_deg_k1000</td><td>0.8919</td></tr>
+<tr><td>F1</td><td>mean_gc_relief_m_k1000</td><td>0.8894</td></tr>
+<tr><td>F1</td><td>mean_gc_contour_mean_slope_deg_k10</td><td>0.8619</td></tr>
+<tr><td>F1</td><td>std_gc_contour_valley_depth_max_m_k250</td><td>0.8501</td></tr>
+<tr><td>F2</td><td>mean_gc_jordart_es_flyvesand_share_k1000</td><td>0.8437</td></tr>
+<tr><td>F2</td><td>std_gc_sand_dune_share_k1000</td><td>0.8208</td></tr>
+<tr><td>F2</td><td>std_gc_sand_dune_share_k250</td><td>0.8103</td></tr>
+<tr><td>F2</td><td>mean_gc_jordart_es_flyvesand_share_k250</td><td>0.7983</td></tr>
+<tr><td>F2</td><td>std_gc_sand_dune_share_k100</td><td>0.7641</td></tr>
+<tr><td>F2</td><td>mean_gc_sand_dune_share_k1000</td><td>0.7634</td></tr>
+<tr><td>F2</td><td>mean_gc_strand_protection_share_k1000</td><td>0.7578</td></tr>
+<tr><td>F2</td><td>mean_gc_sand_dune_share_k250</td><td>0.7472</td></tr>
+<tr><td>F2</td><td>mean_gc_strand_protection_share_k250</td><td>0.7373</td></tr>
+<tr><td>F2</td><td>mean_gc_jordart_es_flyvesand_share_k100</td><td>0.7304</td></tr>
+<tr><td>F3</td><td>mean_gc_fredskov_share_k250</td><td>0.7965</td></tr>
+<tr><td>F3</td><td>mean_gc_fredskov_share_k1000</td><td>0.7957</td></tr>
+<tr><td>F3</td><td>mean_gc_fredskov_share_k100</td><td>0.7854</td></tr>
+<tr><td>F3</td><td>mean_gc_forest_share_k250</td><td>0.7827</td></tr>
+<tr><td>F3</td><td>mean_gc_forest_share_k1000</td><td>0.7820</td></tr>
+<tr><td>F3</td><td>mean_gc_natura_habitat_areas_share_k1000</td><td>0.7764</td></tr>
+<tr><td>F3</td><td>mean_gc_natura_bird_protection_share_k1000</td><td>0.7755</td></tr>
+<tr><td>F3</td><td>mean_gc_forest_share_k100</td><td>0.7719</td></tr>
+<tr><td>F3</td><td>mean_gc_fredskov_share_k50</td><td>0.7711</td></tr>
+<tr><td>F3</td><td>mean_gc_natura_habitat_areas_share_k250</td><td>0.7624</td></tr>
+<tr><td>F4</td><td>mean_gc_fastboende_count_k1000</td><td>0.8759</td></tr>
+<tr><td>F4</td><td>std_gc_fastboende_count_k250</td><td>0.8463</td></tr>
+<tr><td>F4</td><td>mean_gc_fastboende_count_k250</td><td>0.8462</td></tr>
+<tr><td>F4</td><td>std_gc_fastboende_count_k1000</td><td>0.8415</td></tr>
+<tr><td>F4</td><td>mean_gc_fastboende_count_k100</td><td>0.7969</td></tr>
+<tr><td>F4</td><td>std_gc_fastboende_count_k100</td><td>0.7932</td></tr>
+<tr><td>F4</td><td>mean_gc_built_low_selection_share_k1000</td><td>0.7910</td></tr>
+<tr><td>F4</td><td>mean_gc_buildings_low_share_k1000</td><td>0.7700</td></tr>
+<tr><td>F4</td><td>mean_gc_fastboende_count_k50</td><td>0.7548</td></tr>
+<tr><td>F4</td><td>mean_gc_built_low_selection_share_k250</td><td>0.7472</td></tr>
+<tr><td>F5</td><td>mean_gc_highest_point_low_band_k100</td><td>0.7156</td></tr>
+<tr><td>F5</td><td>mean_gc_highest_point_low_band_k250</td><td>0.7155</td></tr>
+<tr><td>F5</td><td>mean_gc_highest_point_low_band_k50</td><td>0.7120</td></tr>
+<tr><td>F5</td><td>mean_gc_highest_point_low_band_k1000</td><td>0.6989</td></tr>
+<tr><td>F5</td><td>mean_gc_highest_point_m_k1000</td><td>-0.6907</td></tr>
+<tr><td>F5</td><td>mean_gc_highest_point_low_band_k10</td><td>0.6868</td></tr>
+<tr><td>F5</td><td>mean_gc_highest_point_m_k250</td><td>-0.6846</td></tr>
+<tr><td>F5</td><td>mean_gc_highest_point_m_k100</td><td>-0.6750</td></tr>
+<tr><td>F5</td><td>mean_gc_contour_mean_elevation_m_k1000</td><td>-0.6737</td></tr>
+<tr><td>F5</td><td>mean_gc_contour_mean_elevation_m_k250</td><td>-0.6689</td></tr></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th scope="col">Metric</th><th scope="col">Value</th></tr></thead><tbody><tr><td>analysis_id</td><td>bornholm_v10_landscape_types</td></tr>
+<tr><td>source_analysis</td><td>bornholm_v9_k8_interactive_layers</td></tr>
+<tr><td>source_cluster_solution</td><td>v9/v3 K=8</td></tr>
+<tr><td>method_status</td><td>interpreted synthesis / reclassification, not a new unsupervised clustering</td></tr>
+<tr><td>main_output</td><td>five Bornholm landscape types</td></tr>
+<tr><td>reference_typology</td><td>Bornholm landscape types, local reference PDF (2025)</td></tr>
+<tr><td>method_reference</td><td>Kawalerowicz &amp; Malmberg 2021, factor scores -&gt; clustering -&gt; interpreted naming</td></tr>
+<tr><td>map_hex_count</td><td>47117</td></tr></tbody></table></div>
+<h2 id="interpretation-and-further-use">Interpretation and further use</h2>
+<p>The landscape types provide structural context for landscape research, regional comparison, landscape planning and discussion of spatial variation. They help distinguish coastal, sandy, fracture-valley, forest/nature and low-lying agricultural settings.</p>
+<p>The five types simplify a continuous and heterogeneous landscape. A class name should be read together with the factor scores, the original cluster and the surrounding geography. A sharp line between cells reflects the classified grid; it does not demonstrate a sharp ecological or visual boundary on the ground.</p>
+<p>Local decisions need additional evidence, including field review and relevant environmental, cultural and planning information. The landscape classification does not itself determine suitability for a particular intervention.</p>
+<h2 id="references-and-attribution">References and attribution</h2>
+<ul>
+<li><strong>Kawalerowicz, Juta and Malmberg, Bo (2021).</strong> <em>Multiscalar Typology of Residential Areas in Sweden</em>. Department of Human Geography, Stockholm University. The multiscalar contextualization, factor-score and interpreted-clustering workflow provides methodological inspiration; this Bornholm application uses landscape data. <a href="https://su.figshare.com/articles/dataset/Multiscalar_typology_of_residential_areas_in_Sweden/14753826">Dataset and supporting material</a> · <a href="https://www.diva-portal.org/smash/record.jsf?pid=diva2:1624901">Publication record</a>.</li>
+<li><strong>Pontus Hennerdal — geocontext.</strong> The geocontext concept and early implementation are acknowledged as methodological origins. <a href="https://github.com/PonHen/geocontext">Original geocontext project</a>. This publication distributes the resulting Bornholm display data; it does not copy that project&#39;s analysis code.</li>
+<li><strong>Bornholm landscape types (2025).</strong> Local reference PDF used to support interpretation in the source analysis. The PDF is not included in this publication.</li>
+<li><strong>GISLab — Bornholm v9/v10 analysis.</strong> The supplied source report, crosswalk, factor-loading matrix and R10–R6 map exports provide the factual basis of this publication. A file manifest records source checksums and publication adaptations.</li>
+</ul>
+<h2 id="supporting-files">Supporting files</h2>
+<ul>
+<li><a href="../map/">Interactive map</a></li>
+<li><a href="../factor-loadings/">Complete factor-loading table</a></li>
+<li><a href="../data/factor-loadings.csv">Factor-loading matrix (CSV)</a></li>
+<li><a href="../data/crosswalk.csv">Cluster-to-type crosswalk (CSV)</a></li>
+<li><a href="../data/type-counts.csv">Landscape-type counts (CSV)</a></li>
+<li><a href="../data/source-manifest.json">Source and adaptation manifest (JSON)</a></li>
+</ul></article></div></main><footer class="footer"><span>GISLab · Bornholm, Denmark · English publication updated 9 October 2026</span><span><a href="../report/#references-and-attribution">References &amp; attribution</a> · <a href="../data/source-manifest.json">Data provenance</a></span></footer></div></body></html>

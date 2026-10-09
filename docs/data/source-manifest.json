@@ -1,0 +1,66 @@
+{
+  "publication_date": "2026-10-09",
+  "analysis": "Bornholm v10 interpreted landscape synthesis",
+  "native_crs": "EPSG:25833",
+  "web_crs": "EPSG:4326",
+  "source_h3_resolution": 10,
+  "adaptation": "English text and standalone paths. Source geometry, H3 identifiers, class assignments and numeric factor values are unchanged. Redundant pre-rendered popups are omitted.",
+  "geometry_processing": "No geometry transformation, clipping, buffering or new clustering was performed.",
+  "files": [
+    {
+      "source_file": "bornholm_v10_landscape_types_map_data.geojson",
+      "source_sha256": "680f815014f4d4b661c6301e657d13ae42e828a54ca1b0c90484757c84e5d457",
+      "output": "docs/data/landscape-r10.geojson",
+      "sha256": "0beffbeb280563ee9fc9ad87c686ce0274699d4165de4c85aa4cbbde24084a85",
+      "feature_count": 47117
+    },
+    {
+      "source_file": "bornholm_v10_landscape_types_rollup_r9.geojson",
+      "source_sha256": "a1163a3e93a151c3881046051757a0e1f20a2f8efe2d72f84d45b03f7ed856cd",
+      "output": "docs/data/landscape-r9.geojson",
+      "sha256": "9a5b8f6153720f63f1a29b51b8c6efb9d94e4a65e0926c9d07aeabd8ffe56b3a",
+      "feature_count": 6854
+    },
+    {
+      "source_file": "bornholm_v10_landscape_types_rollup_r8.geojson",
+      "source_sha256": "c64888790e3e9fc27ff1b8ee1bbd46827ce5966a8275381d7c705a4fcb216fae",
+      "output": "docs/data/landscape-r8.geojson",
+      "sha256": "ecb2b73952deb3e9bf26c377313c41c03c76dcee4df2bad6cceda7648936c7ee",
+      "feature_count": 1029
+    },
+    {
+      "source_file": "bornholm_v10_landscape_types_rollup_r7.geojson",
+      "source_sha256": "66cc4430a22403f1e74266dee9ffa5ee5f638422b3761bfc4d6370707c809d9a",
+      "output": "docs/data/landscape-r7.geojson",
+      "sha256": "45fbbdf513306f5d8cc8779977984e3eee18d11a78ebbed8820c0a8eb73c6aec",
+      "feature_count": 166
+    },
+    {
+      "source_file": "bornholm_v10_landscape_types_rollup_r6.geojson",
+      "source_sha256": "ddbc09b9e938ff9dae30abbc988d81e8ab417718d5fe55c59a7bb505ec3367fb",
+      "output": "docs/data/landscape-r6.geojson",
+      "sha256": "7b94677046e1a5e64d3aa038de51633257f15c89ccd629ceb4a177893ca4cef8",
+      "feature_count": 32
+    },
+    {
+      "source_file": "bornholm_v10_landscape_types_rollup_map.html",
+      "source_sha256": "c85b8aa0e490395424839cadf78884e1265dcef67ccdea72afceb2c41eee5a1b",
+      "output": "docs/map/index.html",
+      "changes": "English interface, local Leaflet assets, publication navigation, consistent class palette from latest source, stale-resolution request guard."
+    },
+    {
+      "source_file": "bornholm_v10_landscape_types_factor_loadings_from_v1.csv",
+      "source_sha256": "504ca902918ec86b806b368153272fc5498caf81425db9fb77698830b43c2304",
+      "output": "docs/data/factor-loadings.csv",
+      "adaptation": "Numeric table and stable analytical variable identifiers preserved verbatim."
+    },
+    {
+      "source_file": "bornholm_v10_landscape_types_report.html",
+      "source_sha256": "77169b469a8e12f3ead02c33db553391dd07fff50c5a54b2c5b6423bb84b4ce2",
+      "output": "docs/data/*.csv",
+      "adaptation": "Full English landscape-type, crosswalk, count, run-summary and top-loading tables extracted from latest local report."
+    }
+  ],
+  "serialization_note": "Standard JSON serialization normalizes six signed negative-zero factor values to zero, preserving numeric equality.",
+  "interface_adaptations": "English interface and descriptive fields; local Leaflet assets; consistent source palette; publication navigation; resolution request-order guard; collapsible mobile controls and padded initial extent; canonical OpenStreetMap tile URL with linked attribution."
+}

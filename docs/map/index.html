@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bornholm multiscale landscape map</title>
+  <link rel="stylesheet" href="../assets/vendor/leaflet.css">
+  <link rel="stylesheet" href="../assets/map.css">
+</head>
+<body>
+  <div id="map" aria-label="Bornholm landscape map with H3 rollup"></div>
+
+  <section class="panel" aria-label="Map controls">
+    <span class="eyebrow">Bornholm</span>
+    <nav class="map-nav" aria-label="Publication"><a href="../">Overview</a><a href="../report/">Report</a><a href="../factor-loadings/">Factor loadings</a></nav><h1>Multiscale landscape map</h1>
+    <p>Explore the same landscape classification from R10 detail to R6 overview. Auto selects the display resolution as you zoom.</p>
+
+    <details id="mapControls" open><summary>Resolution and layers</summary>
+    <div class="toolbar" id="resolutionToolbar" aria-label="H3 resolution">
+      <button type="button" data-mode="auto" class="active">Auto</button>
+      <button type="button" data-resolution="10">R10</button>
+      <button type="button" data-resolution="9">R9</button>
+      <button type="button" data-resolution="8">R8</button>
+      <button type="button" data-resolution="7">R7</button>
+      <button type="button" data-resolution="6">R6</button>
+    </div>
+
+    <div class="control-block" aria-label="Display layers">
+      <div class="control-title">Layers</div>
+      <div class="mode-list">
+        <label class="option"><input type="radio" name="viewMode" value="landscape" checked> Landscape types <span>Five interpreted v10 types.</span></label>
+        <label class="option"><input type="radio" name="viewMode" value="structure"> Structures <span>Original v9 clusters, K=8.</span></label>
+        <label class="option"><input type="radio" name="viewMode" value="factor"> Factors <span>Continuous factor scores.</span></label>
+      </div>
+    </div>
+
+    <div class="control-block" aria-label="Opacity">
+      <div class="control-title">Opacity</div>
+      <div class="slider-row">
+        <input id="opacitySlider" type="range" min="15" max="95" value="72">
+        <span id="opacityValue">72%</span>
+      </div>
+    </div>
+
+    <div class="control-block" aria-label="Factors">
+      <div class="control-title">Factors</div>
+      <div class="factor-grid" id="factorControls">
+        <label class="option"><input type="radio" name="factor" value="F1" checked> F1 <span>Fracture valleys and steep relief</span></label>
+        <label class="option"><input type="radio" name="factor" value="F2"> F2 <span>Aeolian sand and sandy coast</span></label>
+        <label class="option"><input type="radio" name="factor" value="F3"> F3 <span>Forest and protected nature</span></label>
+        <label class="option"><input type="radio" name="factor" value="F4"> F4 <span>Settlement and built structure</span></label>
+        <label class="option"><input type="radio" name="factor" value="F5"> F5 <span>Low-lying open land</span></label>
+      </div>
+    </div>
+
+    <div class="status" id="status">
+      Loading map...
+      <span>R10 is the source resolution. Coarser levels summarize the same Bornholm classification.</span>
+    </div>
+
+    <div class="legend" id="legend">
+      <div class="legend-title">Landscape types</div>
+    </div>
+    </details>
+  </section>
+
+  <div class="zoom-control" aria-label="Zoom">
+    <button type="button" id="zoomIn" aria-label="Zoom in">+</button>
+    <button type="button" id="zoomOut" aria-label="Zoom out">−</button>
+  </div>
+
+  <script src="../assets/vendor/leaflet.js"></script>
+  <script src="../assets/map.js"></script>
+</body>
+</html>

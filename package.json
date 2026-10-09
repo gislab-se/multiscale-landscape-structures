@@ -1,0 +1,12 @@
+{
+  "name": "multiscale-landscape-structures",
+  "private": true,
+  "type": "module",
+  "description": "Standalone English publication of the Bornholm landscape structure analysis.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/preview.mjs",
+    "check": "node scripts/check.mjs"
+  }
+}
